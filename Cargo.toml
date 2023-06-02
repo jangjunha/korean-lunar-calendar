@@ -1,8 +1,16 @@
 [package]
 name = "korean-lunar-calendar"
 version = "0.1.0"
+
+description = "Convert korean lunar date to gregorian date"
+authors = ["jangjunha <hi@jangjunha.me>"]
+homepage = "https://github.com/jangjunha/korean-lunar-calendar/"
+repository = "https://github.com/jangjunha/korean-lunar-calendar/"
+readme = "README.md"
+
 edition = "2021"
 license = "MIT"
+exclude = ["/.github"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
