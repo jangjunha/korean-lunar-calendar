@@ -6,6 +6,7 @@
 한국 음력 날짜를 양력으로 변환합니다.
 
 [한국천문연구원(KASI)][KASI] [천문우주지식정보][KASI-ASTRO] 데이터를 기준으로 합니다.
+데이터셋 생성 부분은 [korean-lunar-calendar-dataset-generator][korean-lunar-calendar-dataset-generator] 프로젝트를 참고해주세요.
 
 
 ## Credit
@@ -19,3 +20,4 @@
 
 [KASI]: https://www.kasi.re.kr/
 [KASI-ASTRO]: https://astro.kasi.re.kr/life/pageView/8
+[korean-lunar-calendar-dataset-generator]: https://github.com/jangjunha/korean-lunar-calendar-dataset-generator
