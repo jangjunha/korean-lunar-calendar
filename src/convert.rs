@@ -4,7 +4,7 @@ use crate::dataset::{BASE, MONTHS};
 use crate::date::LunarDate;
 use crate::month::M;
 
-pub fn lunar_to_gregorian(lunar_date: LunarDate) -> Option<NaiveDate> {
+pub fn lunar_to_gregorian(lunar_date: &LunarDate) -> Option<NaiveDate> {
     let LunarDate {
         year: ty,
         month: (tm, tl),
@@ -13,8 +13,8 @@ pub fn lunar_to_gregorian(lunar_date: LunarDate) -> Option<NaiveDate> {
 
     let mut days_sum: u64 = 0;
     for M { y, m, l, d } in MONTHS.iter() {
-        if ty == *y && tm == *m && tl == *l {
-            return Some(*BASE + Days::new(days_sum + (td as u64) - 1));
+        if *ty == *y && *tm == *m && *tl == *l {
+            return Some(*BASE + Days::new(days_sum + (*td as u64) - 1));
         }
         days_sum += *d as u64
     }
@@ -28,7 +28,7 @@ mod tests {
     #[test]
     fn test_lunar_to_gregorian() {
         assert_eq!(
-            lunar_to_gregorian(LunarDate {
+            lunar_to_gregorian(&LunarDate {
                 year: 1583,
                 month: (1, false),
                 day: 1
@@ -37,7 +37,7 @@ mod tests {
         );
 
         assert_eq!(
-            lunar_to_gregorian(LunarDate {
+            lunar_to_gregorian(&LunarDate {
                 year: 1993,
                 month: (3, true),
                 day: 25
@@ -46,7 +46,7 @@ mod tests {
         );
 
         assert_eq!(
-            lunar_to_gregorian(LunarDate {
+            lunar_to_gregorian(&LunarDate {
                 year: 1582,
                 month: (12, false),
                 day: 30
